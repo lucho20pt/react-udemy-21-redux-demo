@@ -9,7 +9,12 @@ const counterReducer = (state = { counter: 0 }, action) => {
 const store = redux.createStore(counterReducer);
 
 // TODO: Subscription, getState
+const counterSubscription = () => {
+  const lastState = store.getState();
+  console.log(lastState);
+};
 
+store.subscribe(counterSubscription);
 
 // TODO: Dispatcher, action type
 
